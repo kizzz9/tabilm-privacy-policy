@@ -6,107 +6,173 @@
 <title>Tabilm — Privacy Policy</title>
 <style>
 :root {
-  --paper: #F4ECDD; --card: #FFFFFF; --ink: #2C3E50;
-  --sienna: #A85A3A; --muted: #7A746A; --line: #E5DCC9;
+  --accent: #A85A3A; --accent-dark: #8A4A30; --accent-50: #F6EEE2; --accent-200: #E7C9B4;
+  --gray-50: #faf7f1; --gray-100: #f1ece2; --gray-200: #e5dccb;
+  --gray-500: #8a8377; --gray-600: #6b6459; --gray-800: #2C3E50; --gray-900: #1f2b38;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--paper); color: var(--ink); line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: var(--gray-800); line-height: 1.75; -webkit-font-smoothing: antialiased; background: #fff; }
+.hero { background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
+  color: #fff; padding: 76px 20px 56px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content:''; position:absolute; inset:-50%; background:
+  radial-gradient(circle at 30% 70%, rgba(255,255,255,.07) 0%, transparent 50%),
+  radial-gradient(circle at 70% 30%, rgba(255,255,255,.05) 0%, transparent 50%); pointer-events:none; }
+.hero-content { position: relative; z-index: 1; }
+.hero img { width: 92px; height: 92px; border-radius: 22px; box-shadow: 0 4px 16px rgba(0,0,0,.22); }
+.hero h1 { font-size: 2.1em; font-weight: 700; letter-spacing: -.02em; margin: 16px 0 10px; }
+.hero p { font-size: 1.08em; opacity: .92; max-width: 540px; margin: 0 auto; }
+.badge { display: inline-block; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+  padding: 6px 16px; border-radius: 20px; font-size: .82em; margin-top: 18px; }
+.lang-switch { position: absolute; top: 18px; right: 18px; z-index: 10; }
+.lang-switch a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85em;
+  padding: 6px 12px; border: 1px solid rgba(255,255,255,.35); border-radius: 6px; }
+.lang-switch a:hover { color: #fff; background: rgba(255,255,255,.12); }
+.container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 56px 0; border-bottom: 1px solid var(--gray-100); }
+.section:last-child { border-bottom: none; }
+.section-label { display: inline-block; font-size: .72em; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--accent); background: var(--accent-50); padding: 4px 12px; border-radius: 4px; margin-bottom: 12px; }
+.section h2 { font-size: 1.55em; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; letter-spacing: -.01em; }
+.section .subtitle { color: var(--gray-500); font-size: 1.02em; margin-bottom: 28px; }
+.summary-box { background: var(--accent-50); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; padding: 16px 20px; }
+.summary-box p { color: var(--accent-dark); font-size: .98em; font-weight: 500; }
+.policy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.policy-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 16px; padding: 24px; transition: all .25s ease; }
+.policy-card:hover { border-color: var(--accent-200); box-shadow: 0 8px 24px rgba(44,62,80,.07); transform: translateY(-2px); }
+.policy-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--accent-50);
+  display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; }
+.policy-card h3 { font-size: 1em; font-weight: 600; margin-bottom: 6px; color: var(--gray-800); }
+.policy-card p { color: var(--gray-600); font-size: .9em; line-height: 1.65; }
+.prose ul { list-style: none; }
+.prose li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--gray-600); font-size: .96em; }
+.prose li::before { content: ''; position: absolute; left: 4px; top: .65em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.prose li strong { color: var(--gray-800); }
+.prose p { color: var(--gray-600); font-size: .96em; }
+.prose p + p { margin-top: 10px; }
+.contact-note { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 12px; padding: 22px 24px; text-align: center; }
+.contact-note p { color: var(--gray-600); font-size: .95em; }
+.contact-note a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.contact-note a:hover { text-decoration: underline; }
+.footer { text-align: center; padding: 38px 20px; color: var(--gray-500); font-size: .85em; }
+.footer-links { display: flex; justify-content: center; gap: 22px; margin-bottom: 10px; }
+.footer a { color: var(--accent); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+@media (max-width: 600px) {
+  .hero { padding: 56px 20px 40px; } .hero h1 { font-size: 1.6em; }
+  .section { padding: 40px 0; } .section h2 { font-size: 1.3em; }
+  .policy-grid { grid-template-columns: 1fr; }
 }
-.wrap { max-width: 680px; margin: 0 auto; padding: 48px 20px 80px; }
-header { text-align: center; margin-bottom: 40px; }
-header img { width: 72px; height: 72px; border-radius: 16px; box-shadow: 0 4px 16px rgba(44,62,80,.12); }
-h1 { font-size: 1.45em; margin-top: 16px; letter-spacing: .02em; }
-.updated { color: var(--muted); font-size: .85em; margin-top: 4px; }
-.lang { margin-top: 10px; font-size: .9em; }
-.lang a { color: var(--sienna); text-decoration: none; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 28px 26px; margin-bottom: 18px; }
-h2 { font-size: 1.05em; color: var(--sienna); margin-bottom: 10px; }
-p, li { font-size: .95em; }
-ul { padding-left: 1.3em; margin: .5em 0; }
-table { width: 100%; border-collapse: collapse; font-size: .88em; margin: .6em 0; }
-th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
-th { color: var(--muted); font-weight: 600; }
-footer { text-align: center; color: var(--muted); font-size: .85em; margin-top: 36px; }
-a { color: var(--sienna); }
+@media (prefers-color-scheme: dark) {
+  :root { --gray-50:#1a1a26; --gray-100:#22222f; --gray-200:#30303d; --gray-500:#9b9488; --gray-600:#bdb7ab; --gray-800:#e7e2d8; --gray-900:#f3efe6; --accent-50:#2a1d14; }
+  body { background: #0f0f17; color: var(--gray-800); }
+  .policy-card { background: #16161f; } .contact-note { background: #16161f; }
+  .summary-box { background: #2a1d14; } .summary-box p { color: #e7c9b4; }
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <img src="../icon.png" alt="Tabilm">
-  <h1>Tabilm Privacy Policy</h1>
-  <p class="updated">Last updated: June 12, 2026</p>
-  <p class="lang"><a href="../">日本語</a></p>
-</header>
 
-<div class="card">
-  <h2>Our Approach</h2>
-  <p>Tabilm (the “App”) is designed so your travel memories stay on your device and in your own iCloud — nothing else. There is no developer-operated server, and the App contains no analytics or advertising SDKs. The developer cannot see your trips or videos.</p>
+<div class="hero">
+  <div class="lang-switch"><a href="../">日本語</a></div>
+  <div class="hero-content">
+    <img src="../icon.png" alt="Tabilm">
+    <h1>Privacy Policy</h1>
+    <p>How Tabilm handles your privacy and data</p>
+    <div class="badge">Last updated: June 14, 2026</div>
+  </div>
 </div>
 
-<div class="card">
-  <h2>What We Handle and Where It Lives</h2>
-  <table>
-    <tr><th>Data</th><td>Where it lives, and why</td></tr>
-    <tr><th>Trip titles, dates, notes, itineraries, packing lists</th><td>Your iCloud (CloudKit) and your device, to keep and sync your trips</td></tr>
-    <tr><th>Captured video clips and thumbnails (may include where they were shot)</th><td>Your device only</td></tr>
-    <tr><th>Trip photos imported from your Photo Library</th><td>Your device only; read only while you keep the toggle on</td></tr>
-    <tr><th>Exported Vlogs</th><td>Saved to your Photo Library only when you choose “Save to Camera Roll”</td></tr>
-    <tr><th>Free-export usage flag (one free export)</th><td>Your device and your iCloud key-value storage, to restore the trial after reinstall</td></tr>
-    <tr><th>In-app purchase history</th><td>Apple’s StoreKit; payment details are processed by Apple and never reach the App</td></tr>
-  </table>
+<div class="container">
+
+  <div class="section">
+    <span class="section-label">Summary</span>
+    <h2>In short</h2>
+    <p class="subtitle">Tabilm's privacy approach in one line</p>
+    <div class="summary-box">
+      <p>Your travel records stay on your device and in your own iCloud. There is no developer server, no analytics, and no ad SDKs — and the developer cannot see your trips or videos.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Data</span>
+    <h2>What we handle, and where it's stored</h2>
+    <p class="subtitle">What, where, and why</p>
+    <div class="policy-grid">
+      <div class="policy-card"><div class="policy-icon">🗒️</div><h3>Itinerary, plans, packing</h3><p>Trip title / dates / notes / itinerary / packing list are stored in your iCloud (CloudKit) and on device, synced across your devices.</p></div>
+      <div class="policy-card"><div class="policy-icon">🎬</div><h3>Clips & thumbnails</h3><p>Recorded clips and thumbnails (which may include capture coordinates) stay <strong>on your device only</strong> — never uploaded to iCloud.</p></div>
+      <div class="policy-card"><div class="policy-icon">🖼️</div><h3>Imported photos</h3><p>Trip photos imported from your library stay on device only, and are read only when you turn the toggle on.</p></div>
+      <div class="policy-card"><div class="policy-icon">📤</div><h3>Exported Vlogs</h3><p>Added to your photo library only when you tap "Save to Camera Roll".</p></div>
+      <div class="policy-card"><div class="policy-icon">🎟️</div><h3>Free-export status</h3><p>The first-export-free flag is stored on device and in your iCloud key-value storage (so it restores on reinstall).</p></div>
+      <div class="policy-card"><div class="policy-icon">💳</div><h3>In-app purchase</h3><p>Purchase state is managed by Apple's StoreKit. Payment is handled by Apple; the app never receives payment details.</p></div>
+    </div>
+  </div>
+
+  <div class="section prose">
+    <span class="section-label">Permissions</span>
+    <h2>Device features &amp; permissions</h2>
+    <p class="subtitle">You can keep using other features even if you deny any of these</p>
+    <ul>
+      <li><strong>Camera / Microphone</strong> — used only while you are filming.</li>
+      <li><strong>Location</strong> — while in use only. For place search (Apple Maps), itinerary weather (sending plan coordinates to Apple Weather), and tagging clips with location.</li>
+      <li><strong>Photo Library</strong> — to import trip photos (read) and to save finished Vlogs (add only).</li>
+      <li><strong>Notifications</strong> — local reminders only. There is no push server.</li>
+    </ul>
+  </div>
+
+  <div class="section prose">
+    <span class="section-label">Third party</span>
+    <h2>Third-party services</h2>
+    <p class="subtitle">Apple services only</p>
+    <ul>
+      <li><strong>Apple iCloud / CloudKit</strong> — storing, syncing and sharing trip data</li>
+      <li><strong>Apple Weather (WeatherKit)</strong> — sends plan coordinates to Apple to show itinerary weather</li>
+      <li><strong>Apple Maps (MapKit)</strong> — sends your search text to Apple for place search</li>
+      <li><strong>App Store (StoreKit)</strong> — in-app purchase</li>
+    </ul>
+    <p>These are all Apple services, governed additionally by Apple's privacy policy. No data is sent anywhere else, and none of this information is sold or shared with third parties.</p>
+  </div>
+
+  <div class="section prose">
+    <span class="section-label">Sharing</span>
+    <h2>When you share with companions</h2>
+    <p>When you share a trip via iCloud, only people who accept the invite can view and edit that trip's itinerary and packing list. Revoking the share ends their access. Recorded videos stay only on the owner's device and are never uploaded to iCloud.</p>
+  </div>
+
+  <div class="section prose">
+    <span class="section-label">Deletion</span>
+    <h2>Deleting your data</h2>
+    <ul>
+      <li>Deleting a trip removes its iCloud data and the device's videos, thumbnails and itinerary.</li>
+      <li>You can leave a shared trip at any time.</li>
+      <li>Deleting the app erases on-device data. iCloud data can be managed/deleted from iOS Settings → Apple ID → iCloud.</li>
+    </ul>
+  </div>
+
+  <div class="section prose">
+    <span class="section-label">Other</span>
+    <h2>Children / Changes</h2>
+    <p>Tabilm is not intended for children under 13. If this policy changes, we will update the date on this page and notify you in the app where appropriate.</p>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Contact</span>
+    <h2>Contact</h2>
+    <p class="subtitle">Developer: kizzz9</p>
+    <div class="contact-note">
+      <p>For questions about this policy, please reach out via <a href="https://github.com/kizzz9/tabilm-support/issues">GitHub Issues</a>.</p>
+    </div>
+  </div>
+
 </div>
 
-<div class="card">
-  <h2>Device Features and Permissions</h2>
-  <ul>
-    <li><strong>Camera / Microphone</strong>: used only while you are filming.</li>
-    <li><strong>Location</strong>: while using the App only — place search (Apple Maps), itinerary weather (coordinates sent to Apple Weather), and tagging clips with where they were shot.</li>
-    <li><strong>Photo Library</strong>: reading photos you choose to import, and adding finished Vlogs (add-only).</li>
-    <li><strong>Notifications</strong>: local notifications only (such as shoot reminders). There is no push server.</li>
-  </ul>
-  <p>You can decline any permission and keep using the rest of the App.</p>
+<div class="footer">
+  <div class="footer-links">
+    <a href="https://kizzz9.github.io/tabilm-support/en/">Support</a>
+    <a href="https://github.com/kizzz9/tabilm-support/issues">Contact</a>
+  </div>
+  <p>&copy; 2026 kizzz9 — Tabilm</p>
 </div>
 
-<div class="card">
-  <h2>Third-Party Services</h2>
-  <ul>
-    <li><strong>Apple iCloud / CloudKit</strong> — storing, syncing and sharing trip data</li>
-    <li><strong>Apple Weather (WeatherKit)</strong> — itinerary coordinates are sent to Apple to show weather</li>
-    <li><strong>Apple Maps (MapKit)</strong> — search text is sent to Apple for place search</li>
-    <li><strong>App Store (StoreKit)</strong> — in-app purchase</li>
-  </ul>
-  <p>These are Apple services, and Apple’s privacy policy applies to them. No data is sent anywhere else, and we never sell or share your information with third parties.</p>
-</div>
-
-<div class="card">
-  <h2>When You Share a Trip</h2>
-  <p>When you share a trip via iCloud, only the people who accept your invitation can view and edit that trip’s itinerary and packing list. Revoking the share ends their access. Captured videos stay on the owner’s device and are not uploaded to iCloud.</p>
-</div>
-
-<div class="card">
-  <h2>Deleting Your Data</h2>
-  <ul>
-    <li>Deleting a trip removes its data from iCloud and the videos, thumbnails and itinerary from your device.</li>
-    <li>You can leave a shared trip at any time.</li>
-    <li>Deleting the App removes all local data. Data in iCloud can be managed from Settings → Apple ID → iCloud on your device.</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h2>Children / Revisions</h2>
-  <p>The App is not intended for users under 13. If we revise this policy, we will update the date above and, where appropriate, notify you in the App.</p>
-</div>
-
-<div class="card">
-  <h2>Contact</h2>
-  <p>Developer: kizzz9<br>Contact: <a href="mailto:nsmtkz9@gmail.com">nsmtkz9@gmail.com</a></p>
-</div>
-
-<footer>© 2026 kizzz9 — Tabilm</footer>
-</div>
 </body>
 </html>
