@@ -3,183 +3,320 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tabilm（タビルム）のプライバシーポリシー。旅の記録はあなたの端末と iCloud の中だけで完結します。">
 <title>Tabilm — プライバシーポリシー</title>
+<link rel="icon" href="./icon.png">
+<link rel="apple-touch-icon" href="./icon.png">
 <style>
 :root {
-  --accent: #A85A3A; --accent-dark: #8A4A30; --accent-50: #F6EEE2; --accent-200: #E7C9B4;
-  --gray-50: #faf7f1; --gray-100: #f1ece2; --gray-200: #e5dccb;
-  --gray-500: #8a8377; --gray-600: #6b6459; --gray-800: #2C3E50; --gray-900: #1f2b38;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Segoe UI', sans-serif;
-  color: var(--gray-800); line-height: 1.75; -webkit-font-smoothing: antialiased; background: #fff; }
-.hero { background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%);
-  color: #fff; padding: 76px 20px 56px; text-align: center; position: relative; overflow: hidden; }
-.hero::before { content:''; position:absolute; inset:-50%; background:
-  radial-gradient(circle at 30% 70%, rgba(255,255,255,.07) 0%, transparent 50%),
-  radial-gradient(circle at 70% 30%, rgba(255,255,255,.05) 0%, transparent 50%); pointer-events:none; }
-.hero-content { position: relative; z-index: 1; }
-.hero img { width: 92px; height: 92px; border-radius: 22px; box-shadow: 0 4px 16px rgba(0,0,0,.22); }
-.hero h1 { font-size: 2.1em; font-weight: 700; letter-spacing: -.02em; margin: 16px 0 10px; }
-.hero p { font-size: 1.08em; opacity: .92; max-width: 540px; margin: 0 auto; }
-.badge { display: inline-block; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
-  padding: 6px 16px; border-radius: 20px; font-size: .82em; margin-top: 18px; }
-.lang-switch { position: absolute; top: 18px; right: 18px; z-index: 10; }
-.lang-switch a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .85em;
-  padding: 6px 12px; border: 1px solid rgba(255,255,255,.35); border-radius: 6px; }
-.lang-switch a:hover { color: #fff; background: rgba(255,255,255,.12); }
-.container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
-.section { padding: 56px 0; border-bottom: 1px solid var(--gray-100); }
-.section:last-child { border-bottom: none; }
-.section-label { display: inline-block; font-size: .72em; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .1em; color: var(--accent); background: var(--accent-50); padding: 4px 12px; border-radius: 4px; margin-bottom: 12px; }
-.section h2 { font-size: 1.55em; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; letter-spacing: -.01em; }
-.section .subtitle { color: var(--gray-500); font-size: 1.02em; margin-bottom: 28px; }
-.summary-box { background: var(--accent-50); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; padding: 16px 20px; }
-.summary-box p { color: var(--accent-dark); font-size: .98em; font-weight: 500; }
-.policy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-.policy-card { background: #fff; border: 1px solid var(--gray-200); border-radius: 16px; padding: 24px; transition: all .25s ease; }
-.policy-card:hover { border-color: var(--accent-200); box-shadow: 0 8px 24px rgba(44,62,80,.07); transform: translateY(-2px); }
-.policy-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--accent-50);
-  display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; }
-.policy-card h3 { font-size: 1em; font-weight: 600; margin-bottom: 6px; color: var(--gray-800); }
-.policy-card p { color: var(--gray-600); font-size: .9em; line-height: 1.65; }
-.prose ul { list-style: none; }
-.prose li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--gray-600); font-size: .96em; }
-.prose li::before { content: ''; position: absolute; left: 4px; top: .65em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
-.prose li strong { color: var(--gray-800); }
-.prose p { color: var(--gray-600); font-size: .96em; }
-.prose p + p { margin-top: 10px; }
-.contact-note { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 12px; padding: 22px 24px; text-align: center; }
-.contact-note p { color: var(--gray-600); font-size: .95em; }
-.contact-note a { color: var(--accent); text-decoration: none; font-weight: 600; }
-.contact-note a:hover { text-decoration: underline; }
-.footer { text-align: center; padding: 38px 20px; color: var(--gray-500); font-size: .85em; }
-.footer-links { display: flex; justify-content: center; gap: 22px; margin-bottom: 10px; }
-.footer a { color: var(--accent); text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
-@media (max-width: 600px) {
-  .hero { padding: 56px 20px 40px; } .hero h1 { font-size: 1.6em; }
-  .section { padding: 40px 0; } .section h2 { font-size: 1.3em; }
-  .policy-grid { grid-template-columns: 1fr; }
+  --desk: #E9DEC9;
+  --sheet: #FBF6EB;
+  --card: #FFFDF7;
+  --panel: #F3E9D7;
+  --line: #E2D6BF;
+  --ink: #3B3126;
+  --muted: #7C7160;
+  --faint: #9C9080;
+  --accent: #B25E38;
+  --accent-deep: #96482A;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --gray-50:#1a1a26; --gray-100:#22222f; --gray-200:#30303d; --gray-500:#9b9488; --gray-600:#bdb7ab; --gray-800:#e7e2d8; --gray-900:#f3efe6; --accent-50:#2a1d14; }
-  body { background: #0f0f17; color: var(--gray-800); }
-  .policy-card { background: #16161f; } .contact-note { background: #16161f; }
-  .summary-box { background: #2a1d14; } .summary-box p { color: #e7c9b4; }
+  :root {
+    --desk: #171310;
+    --sheet: #201A14;
+    --card: #282019;
+    --panel: #2C231A;
+    --line: #3C3227;
+    --ink: #EDE3D3;
+    --muted: #AC9F8C;
+    --faint: #8A7E6E;
+    --accent: #DE9564;
+    --accent-deep: #E8A97E;
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { color-scheme: light dark; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Helvetica Neue", "Yu Gothic", sans-serif;
+  background: var(--desk); color: var(--ink);
+  line-height: 1.85; -webkit-font-smoothing: antialiased;
+  padding: 36px 16px;
+}
+.sheet {
+  max-width: 740px; margin: 0 auto; background: var(--sheet);
+  border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(60, 45, 25, .07);
+  overflow: hidden; position: relative;
+}
+.masthead { text-align: center; padding: 46px 28px 30px; position: relative; }
+.lang { position: absolute; top: 16px; right: 16px; }
+.lang a {
+  display: inline-block; color: var(--muted); text-decoration: none;
+  font-size: 12.5px; padding: 5px 12px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+}
+.lang a:hover { color: var(--accent); border-color: var(--accent); }
+.masthead img { width: 64px; height: 64px; border-radius: 15px; border: 1px solid var(--line); }
+.brand {
+  margin-top: 14px; font-size: 11px; font-weight: 700;
+  letter-spacing: .38em; text-indent: .38em; color: var(--accent);
+}
+.masthead h1 {
+  font-size: 26px; font-weight: 700; letter-spacing: .02em;
+  font-feature-settings: "palt"; margin-top: 4px;
+}
+.tagline { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.stamp {
+  display: inline-block; margin-top: 16px; padding: 4px 14px;
+  border: 1.5px solid var(--accent); border-radius: 6px;
+  color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: .08em;
+  transform: rotate(-2deg); opacity: .9;
+}
+.tear { position: relative; border-top: 2px dashed var(--line); }
+.tear::before, .tear::after {
+  content: ''; position: absolute; top: -10px; width: 18px; height: 18px;
+  border-radius: 50%; background: var(--desk); border: 1px solid var(--line);
+}
+.tear::before { left: -10px; }
+.tear::after { right: -10px; }
+.content { padding: 12px 44px 40px; }
+.section { padding-top: 40px; }
+.label {
+  font-size: 11px; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--accent);
+}
+.section h2 {
+  font-size: 20px; font-weight: 700; letter-spacing: .01em;
+  font-feature-settings: "palt"; margin: 2px 0 4px;
+}
+.subtitle { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+.summary {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 12px; padding: 18px 20px;
+}
+.summary svg { flex-shrink: 0; width: 26px; height: 26px; color: var(--accent); margin-top: 3px; }
+.summary p { font-size: 14.5px; font-weight: 500; line-height: 1.9; }
+.policy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.policy {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 20px;
+}
+.policy .icon {
+  width: 40px; height: 40px; border-radius: 10px; background: var(--panel);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); margin-bottom: 12px;
+}
+.policy .icon svg { width: 22px; height: 22px; }
+.policy h3 { font-size: 14.5px; font-weight: 600; margin-bottom: 4px; }
+.policy p { color: var(--muted); font-size: 13.5px; line-height: 1.75; }
+.policy p strong { color: var(--ink); }
+.prose ul { list-style: none; }
+.prose li { position: relative; padding-left: 20px; margin-bottom: 9px; color: var(--muted); font-size: 14.5px; }
+.prose li::before {
+  content: ''; position: absolute; left: 3px; top: .72em;
+  width: 6px; height: 6px; border-radius: 1.5px; background: var(--accent);
+}
+.prose li strong { color: var(--ink); }
+.prose > p:not(.label):not(.subtitle) { color: var(--muted); font-size: 14.5px; }
+.prose > p + p, .prose ul + p { margin-top: 10px; }
+.note {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 18px 22px; text-align: center;
+}
+.note p { color: var(--muted); font-size: 14px; }
+.note a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.note a:hover { text-decoration: underline; }
+.footer { text-align: center; padding: 26px 28px 32px; }
+.footer-links { display: flex; justify-content: center; gap: 22px; margin-bottom: 8px; }
+.footer a { color: var(--accent); text-decoration: none; font-size: 13px; }
+.footer a:hover { text-decoration: underline; }
+.footer .copy { color: var(--faint); font-size: 12px; }
+@media (max-width: 640px) {
+  body { padding: 0; }
+  .sheet { border-radius: 0; border-left: none; border-right: none; box-shadow: none; }
+  .tear::before { left: -9px; } .tear::after { right: -9px; }
+  .content { padding: 8px 22px 36px; }
+  .masthead { padding: 40px 22px 26px; }
+  .policy-grid { grid-template-columns: 1fr; }
+}
+@media print {
+  body { background: #fff; padding: 0; }
+  .sheet { border: none; box-shadow: none; }
+  .lang, .footer-links { display: none; }
 }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="lang-switch"><a href="./en/">English</a></div>
-  <div class="hero-content">
+<div class="sheet">
+  <header class="masthead">
+    <nav class="lang"><a href="./en/" lang="en">English</a></nav>
     <img src="./icon.png" alt="Tabilm">
+    <p class="brand" lang="en">TABILM</p>
     <h1>プライバシーポリシー</h1>
-    <p>Tabilm におけるプライバシーとデータの取り扱いについて</p>
-    <div class="badge">最終更新日: 2026年6月14日</div>
-  </div>
-</div>
+    <p class="tagline">Tabilm におけるプライバシーとデータの取り扱いについて</p>
+    <p class="stamp">最終更新日 2026.06.14</p>
+  </header>
 
-<div class="container">
+  <div class="tear" role="presentation"></div>
 
-  <!-- Summary -->
-  <div class="section">
-    <span class="section-label">Summary</span>
-    <h2>要約</h2>
-    <p class="subtitle">Tabilm のプライバシー方針を一言で</p>
-    <div class="summary-box">
-      <p>旅の記録はあなたの端末と iCloud の中だけで完結します。開発者のサーバーはありません。アクセス解析ツールも広告 SDK も一切組み込んでおらず、開発者があなたの旅や動画を見ることはできません。</p>
+  <main class="content">
+
+    <section class="section">
+      <p class="label">Summary</p>
+      <h2>要約</h2>
+      <p class="subtitle">Tabilm のプライバシー方針を一言で</p>
+      <div class="summary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.2"/>
+          <path d="M8.6 12.3l2.3 2.3 4.5-4.6"/>
+        </svg>
+        <p>旅の記録はあなたの端末と iCloud の中だけで完結します。開発者のサーバーはありません。アクセス解析ツールも広告 SDK も一切組み込んでおらず、開発者があなたの旅や動画を見ることはできません。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="label">Data</p>
+      <h2>取り扱う情報と保存先</h2>
+      <p class="subtitle">何を、どこに、なぜ保存するか</p>
+      <div class="policy-grid">
+        <div class="policy">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="4" width="14" height="16" rx="2.2"/>
+              <line x1="8.5" y1="8.5" x2="15.5" y2="8.5"/>
+              <line x1="8.5" y1="12" x2="15.5" y2="12"/>
+              <line x1="8.5" y1="15.5" x2="12.5" y2="15.5"/>
+            </svg>
+          </div>
+          <h3>しおり・予定・持ち物</h3>
+          <p>旅のタイトル / 日程 / メモ / しおり予定 / 持ち物リスト。あなたの iCloud（CloudKit）と端末に保存し、端末間で同期します。</p>
+        </div>
+        <div class="policy">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="5" width="16" height="14" rx="2"/>
+              <line x1="8.2" y1="5" x2="8.2" y2="19"/>
+              <line x1="15.8" y1="5" x2="15.8" y2="19"/>
+            </svg>
+          </div>
+          <h3>撮影クリップ・サムネ</h3>
+          <p>撮影した動画とサムネイル（撮影地点の座標を含むことがあります）は<strong>端末ローカルのみ</strong>。iCloud にはアップロードしません。</p>
+        </div>
+        <div class="policy">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="5" width="16" height="14" rx="2"/>
+              <circle cx="9" cy="10" r="1.4"/>
+              <path d="M4.8 16.6l4.2-4 3.5 3.3 3-2.8 3.7 3.5"/>
+            </svg>
+          </div>
+          <h3>取り込んだ写真</h3>
+          <p>写真ライブラリから取り込む旅の写真は端末ローカルのみ。あなたがトグルを ON にした時だけ読み取ります。</p>
+        </div>
+        <div class="policy">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 14V4"/>
+              <path d="M8.5 7.5L12 4l3.5 3.5"/>
+              <path d="M5 13v4.8c0 1.2 1 2.2 2.2 2.2h9.6c1.2 0 2.2-1 2.2-2.2V13"/>
+            </svg>
+          </div>
+          <h3>書き出した Vlog</h3>
+          <p>「カメラロールへ保存」を選んだ時のみ写真ライブラリへ追加します。</p>
+        </div>
+        <div class="policy">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 8.5c0-1 .8-1.8 1.8-1.8h12.4c1 0 1.8.8 1.8 1.8v1.2a2.3 2.3 0 0 0 0 4.6v1.2c0 1-.8 1.8-1.8 1.8H5.8c-1 0-1.8-.8-1.8-1.8v-1.2a2.3 2.3 0 0 0 0-4.6z"/>
+              <line x1="14.5" y1="7" x2="14.5" y2="17" stroke-dasharray="2.2 2.6"/>
+            </svg>
+          </div>
+          <h3>無料書き出し枠の使用状況</h3>
+          <p>初回 1 本無料の使用フラグを端末とあなたの iCloud キーバリューストレージに保存（再インストール時の復元のため）。</p>
+        </div>
+        <div class="policy">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="6" width="16" height="12" rx="2"/>
+              <line x1="4" y1="10" x2="20" y2="10"/>
+              <line x1="7.5" y1="14.5" x2="11" y2="14.5"/>
+            </svg>
+          </div>
+          <h3>App 内課金</h3>
+          <p>購入状態は Apple の StoreKit が管理。決済情報は Apple が処理し、本アプリは取得しません。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section prose">
+      <p class="label">Permissions</p>
+      <h2>端末の機能・権限</h2>
+      <p class="subtitle">いずれも拒否したまま他の機能を使えます</p>
+      <ul>
+        <li><strong>カメラ / マイク</strong> — 撮影中のみ使用します。</li>
+        <li><strong>位置情報</strong> — 使用中のみ。場所検索（Apple Maps）、しおりの天気表示（Apple Weather に予定地点の座標を送信）、撮影クリップへの位置記録に使います。</li>
+        <li><strong>写真ライブラリ</strong> — 旅の写真の取り込み（読み取り）と、完成した Vlog の保存（追加のみ）。</li>
+        <li><strong>通知</strong> — 撮影リマインダー等のローカル通知のみ。プッシュ配信サーバーはありません。</li>
+      </ul>
+    </section>
+
+    <section class="section prose">
+      <p class="label">Third party</p>
+      <h2>第三者サービス</h2>
+      <p class="subtitle">利用するのは Apple のサービスのみ</p>
+      <ul>
+        <li><strong>Apple iCloud / CloudKit</strong> — 旅データの保存・同期・共有</li>
+        <li><strong>Apple Weather (WeatherKit)</strong> — しおりの天気表示のため予定地点の座標を Apple に送信</li>
+        <li><strong>Apple Maps (MapKit)</strong> — 場所検索のため検索文字列を Apple に送信</li>
+        <li><strong>App Store (StoreKit)</strong> — App 内課金</li>
+      </ul>
+      <p>いずれも Apple のサービスで、Apple のプライバシーポリシーが別途適用されます。上記以外に外部へデータを送信することはなく、これらの情報を第三者に販売・提供することもありません。</p>
+    </section>
+
+    <section class="section prose">
+      <p class="label">Sharing</p>
+      <h2>同行者と共有したとき</h2>
+      <p>iCloud で旅を共有すると、招待を承諾した相手だけがその旅のしおり・持ち物を閲覧・編集できます。共有を解除すると相手のアクセスは失効します。撮影した動画はオーナーの端末ローカルにのみ保存され、iCloud にはアップロードされません。</p>
+    </section>
+
+    <section class="section prose">
+      <p class="label">Deletion</p>
+      <h2>データの削除</h2>
+      <ul>
+        <li>旅を削除すると、iCloud 上の対応データと端末内の動画・サムネイル・しおりが削除されます。</li>
+        <li>共有に参加した旅からはいつでも退出できます。</li>
+        <li>アプリを削除すると端末ローカルのデータは消去されます。iCloud 上のデータは iOS の「設定 → Apple ID → iCloud」から管理・削除できます。</li>
+      </ul>
+    </section>
+
+    <section class="section prose">
+      <p class="label">Other</p>
+      <h2>子どもの利用 / 改訂</h2>
+      <p>本アプリは 13 歳未満の利用を想定していません。ポリシーを改訂した場合は本ページの最終更新日を変更し、必要に応じてアプリ内で告知します。</p>
+    </section>
+
+    <section class="section">
+      <p class="label">Contact</p>
+      <h2>お問い合わせ</h2>
+      <p class="subtitle">開発者: kizzz9</p>
+      <div class="note">
+        <p>本ポリシーに関するお問い合わせは <a href="https://github.com/kizzz9/tabilm-support/issues">GitHub Issues</a> までお願いします。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="tear" role="presentation"></div>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://kizzz9.github.io/tabilm-support/">サポート</a>
+      <a href="https://github.com/kizzz9/tabilm-support/issues">お問い合わせ</a>
     </div>
-  </div>
-
-  <!-- Data -->
-  <div class="section">
-    <span class="section-label">Data</span>
-    <h2>取り扱う情報と保存先</h2>
-    <p class="subtitle">何を、どこに、なぜ保存するか</p>
-    <div class="policy-grid">
-      <div class="policy-card"><div class="policy-icon">🗒️</div><h3>しおり・予定・持ち物</h3><p>旅のタイトル / 日程 / メモ / しおり予定 / 持ち物リスト。あなたの iCloud（CloudKit）と端末に保存し、端末間で同期します。</p></div>
-      <div class="policy-card"><div class="policy-icon">🎬</div><h3>撮影クリップ・サムネ</h3><p>撮影した動画とサムネイル（撮影地点の座標を含むことがあります）は<strong>端末ローカルのみ</strong>。iCloud にはアップロードしません。</p></div>
-      <div class="policy-card"><div class="policy-icon">🖼️</div><h3>取り込んだ写真</h3><p>写真ライブラリから取り込む旅の写真は端末ローカルのみ。あなたがトグルを ON にした時だけ読み取ります。</p></div>
-      <div class="policy-card"><div class="policy-icon">📤</div><h3>書き出した Vlog</h3><p>「カメラロールへ保存」を選んだ時のみ写真ライブラリへ追加します。</p></div>
-      <div class="policy-card"><div class="policy-icon">🎟️</div><h3>無料書き出し枠の使用状況</h3><p>初回 1 本無料の使用フラグを端末とあなたの iCloud キーバリューストレージに保存（再インストール時の復元のため）。</p></div>
-      <div class="policy-card"><div class="policy-icon">💳</div><h3>App 内課金</h3><p>購入状態は Apple の StoreKit が管理。決済情報は Apple が処理し、本アプリは取得しません。</p></div>
-    </div>
-  </div>
-
-  <!-- Permissions -->
-  <div class="section prose">
-    <span class="section-label">Permissions</span>
-    <h2>端末の機能・権限</h2>
-    <p class="subtitle">いずれも拒否したまま他の機能を使えます</p>
-    <ul>
-      <li><strong>カメラ / マイク</strong> — 撮影中のみ使用します。</li>
-      <li><strong>位置情報</strong> — 使用中のみ。場所検索（Apple Maps）、しおりの天気表示（Apple Weather に予定地点の座標を送信）、撮影クリップへの位置記録に使います。</li>
-      <li><strong>写真ライブラリ</strong> — 旅の写真の取り込み（読み取り）と、完成した Vlog の保存（追加のみ）。</li>
-      <li><strong>通知</strong> — 撮影リマインダー等のローカル通知のみ。プッシュ配信サーバーはありません。</li>
-    </ul>
-  </div>
-
-  <!-- Third party -->
-  <div class="section prose">
-    <span class="section-label">Third party</span>
-    <h2>第三者サービス</h2>
-    <p class="subtitle">利用するのは Apple のサービスのみ</p>
-    <ul>
-      <li><strong>Apple iCloud / CloudKit</strong> — 旅データの保存・同期・共有</li>
-      <li><strong>Apple Weather (WeatherKit)</strong> — しおりの天気表示のため予定地点の座標を Apple に送信</li>
-      <li><strong>Apple Maps (MapKit)</strong> — 場所検索のため検索文字列を Apple に送信</li>
-      <li><strong>App Store (StoreKit)</strong> — App 内課金</li>
-    </ul>
-    <p>いずれも Apple のサービスで、Apple のプライバシーポリシーが別途適用されます。上記以外に外部へデータを送信することはなく、これらの情報を第三者に販売・提供することもありません。</p>
-  </div>
-
-  <!-- Sharing -->
-  <div class="section prose">
-    <span class="section-label">Sharing</span>
-    <h2>同行者と共有したとき</h2>
-    <p>iCloud で旅を共有すると、招待を承諾した相手だけがその旅のしおり・持ち物を閲覧・編集できます。共有を解除すると相手のアクセスは失効します。撮影した動画はオーナーの端末ローカルにのみ保存され、iCloud にはアップロードされません。</p>
-  </div>
-
-  <!-- Deletion -->
-  <div class="section prose">
-    <span class="section-label">Deletion</span>
-    <h2>データの削除</h2>
-    <ul>
-      <li>旅を削除すると、iCloud 上の対応データと端末内の動画・サムネイル・しおりが削除されます。</li>
-      <li>共有に参加した旅からはいつでも退出できます。</li>
-      <li>アプリを削除すると端末ローカルのデータは消去されます。iCloud 上のデータは iOS の「設定 → Apple ID → iCloud」から管理・削除できます。</li>
-    </ul>
-  </div>
-
-  <!-- Misc -->
-  <div class="section prose">
-    <span class="section-label">Other</span>
-    <h2>子どもの利用 / 改訂</h2>
-    <p>本アプリは 13 歳未満の利用を想定していません。ポリシーを改訂した場合は本ページの最終更新日を変更し、必要に応じてアプリ内で告知します。</p>
-  </div>
-
-  <!-- Contact -->
-  <div class="section">
-    <span class="section-label">Contact</span>
-    <h2>お問い合わせ</h2>
-    <p class="subtitle">開発者: kizzz9</p>
-    <div class="contact-note">
-      <p>本ポリシーに関するお問い合わせは <a href="https://github.com/kizzz9/tabilm-support/issues">GitHub Issues</a> までお願いします。</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="footer">
-  <div class="footer-links">
-    <a href="https://kizzz9.github.io/tabilm-support/">サポート</a>
-    <a href="https://github.com/kizzz9/tabilm-support/issues">お問い合わせ</a>
-  </div>
-  <p>&copy; 2026 kizzz9 — Tabilm</p>
+    <p class="copy">&copy; 2026 kizzz9 — Tabilm</p>
+  </footer>
 </div>
 
 </body>
